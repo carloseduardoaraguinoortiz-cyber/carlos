@@ -1,0 +1,139 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER */
+.main-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.main-header h1 {
+    font-size: 2.5rem;
+    color: #2563eb;
+}
+.main-header .subtitle {
+    font-size: 1.2rem;
+    color: #6b7280;
+    margin-top: 10px;
+}
+
+/* DEMO SECTION */
+.demo-section {
+    margin-bottom: 50px;
+}
+.demo-section h2 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+.demo-section p.info {
+    font-size: 0.95rem;
+    color: #374151;
+    margin-bottom: 15px;
+}
+
+/* CARDS */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.examples-grid, .usage-grid, .background-demo-grid, .comparison-grid {
+    display: grid;
+    gap: 20px;
+}
+.examples-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.usage-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.background-demo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.comparison-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* DEMO BOXES */
+.demo-box {
+    border: 2px dashed #2563eb;
+    border-radius: 8px;
+    background: #eef2ff;
+    padding: 20px;
+    min-height: 80px;
+}
+
+/* Padding clases */
+.padding-20 { padding: 20px; }
+.padding-vertical { padding: 30px 10px; }
+.padding-horizontal { padding: 10px 40px; }
+.padding-custom { padding: 10px 20px 30px 40px; }
+.padding-small { padding: 10px; }
+.padding-medium { padding: 20px; }
+.padding-large { padding: 40px; }
+
+/* Botones */
+.btn {
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.2s;
+}
+.btn-small { padding: 5px 10px; }
+.btn-medium { padding: 10px 20px; }
+.btn-large { padding: 15px 30px; }
+.btn:hover { background-color: #1d4ed8; }
+
+/* Inputs */
+.input {
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #d1d5db;
+}
+.input-small { padding: 5px; }
+.input-medium { padding: 10px; }
+.input-large { padding: 15px; }
+
+/* Cards ejemplo */
+.card-content {
+    background: #e0e7ff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Inline & Block */
+.inline-padded { padding: 0 10px; background: #fde68a; }
+.inline-block-padded { display:inline-block; padding: 10px 15px; background: #fcd34d; }
+.block-padded { display:block; padding: 20px; background: #fbbf24; margin-top: 10px; }
+
+/* CODE */
+.code-section pre {
+    background: #1e293b;
+    color: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+}

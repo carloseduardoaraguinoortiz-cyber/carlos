@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ejemplo de menú de navegación responsive con efectos modernos">
+    <title>Navegación Moderna | Ejercicio 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación Principal -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="logo-icon">🤖</span>
+                <span class="logo-text"> MANAGERCD</span>
+            </a>
+
+            <!-- Toggle para móvil (hamburguesa) -->
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <span class="hamburger"></span>
+            </button>
+
+            <!-- Menú de navegación -->
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#inicio" class="nav-link active">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portafolio" class="nav-link">Portafolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#equipo" class="nav-link">Equipo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contacto" class="nav-link btn-cta">Contactar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido de ejemplo para demostrar scroll -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Navegación Moderna y Responsive</h1>
+            <p>Este menú demuestra el uso de pseudo-clases CSS y diseño responsive.</p>
+            
+            
+            <div class="features">
+                
+                <div class="feature-card">
+                    <h3>Efectos Hover</h3>
+                    <p>Los enlaces cambian de color al pasar el mouse con transiciones suaves.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Estado Activo</h3>
+                    <p>El enlace actual tiene un estilo diferente para indicar la página actual.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Responsive</h3>
+                    <p>El menú se adapta a dispositivos móviles con un botón hamburguesa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="servicios">
+        <div class="container">
+            <h2>Sección de Servicios</h2>
+            <p>Contenido de ejemplo para demostrar la navegación. Desplázate hacia abajo para ver más secciones.</p>
+            
+            <div class="galeria-container">
+            <article class="galeria">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1169&auto=format&fit=crop" alt="servicio 1">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1170&auto=format&fit=crop" alt="servicio 2">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?q=80&w=1169&auto=format&fit=crop" alt="servicio 3">
+            </article>
+        </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="portafolio">
+        <div class="container">
+            <h2>Sección de Portafolio</h2>
+            <p>Aquí iría el portafolio de proyectos.</p>
+            <div class="galeria-container">
+
+                <article class="galeria">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Proyecto Web">
+                        <h3>Sitio Web Corporativo</h3>
+                        <p>Diseño responsivo y optimizado para empresas.</p>
+                        
+                    </div>
+
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="App móvil">
+                        <h3>Aplicación Móvil</h3>
+                        <p>Interfaz intuitiva para mejorar la experiencia del usuario.</p>
+                        
+                    </div>
+
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?q=80&w=1200&auto=format&fit=crop" alt="E-commerce">
+                        <h3>Plataforma E-commerce</h3>
+                        <p>Desarrollo completo con carrito de compras y pagos.</p>
+                        
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="equipo">
+        <div class="container">
+            <h2>Sección del Equipo</h2>
+            <p>Información sobre el equipo de trabajo.</p>
+
+            <div class="galeria-container">
+
+                <article class="galeria">
+                    <div>
+                        <img src="https://plus.unsplash.com/premium_photo-1726876905411-d6dd5842eb64?q=80&w=933&auto=format&fit=crop" alt="Miembro 1">
+                        <h3>Laura Fernández</h3>
+                        <p>Especialista en diseño centrado en el usuario y creación de interfaces modernas.</p>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1590086782792-42dd2350140d?q=80&w=600&auto=format&fit=crop" alt="Miembro 2">
+                        <h3>Javier Rojas</h3>
+                        <span class="role">Desarrollador Web</span>
+                        <p>Encargado del desarrollo front-end y back-end con tecnologías modernas.</p>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop" alt="Miembro 3">
+                        <h3>Andrea Silva</h3>
+                        <span class="role">Gerente de Proyectos</span>
+                        <p>Coordina el flujo de trabajo, el cumplimiento de objetivos y la comunicación con clientes.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="blog">
+        <div class="container">
+            <h2>Sección del Blog</h2>
+            <p>Artículos y noticias recientes.</p>
+        </div>
+    </section>
+
+    <section class="content-section" id="contacto">
+        <div class="container">
+            <h2>Sección de Contacto</h2>
+            <p>Formulario de contacto y datos.</p>
+
+            <div class="contact-grid">
+
+            <!-- Información -->
+            <div class="contact-info">
+                <h3>Información de contacto</h3>
+                <p><strong>📍 Dirección:</strong> Av. Principal 123, Ciudad</p>
+                <p><strong>📞 Teléfono:</strong> +591 700-00000</p>
+                <p><strong>📧 Email:</strong> info@miempresa.com</p>
+
+                <div class="social">
+                    <a href="#">🌐 Facebook</a>
+                    <a href="#">📷 Instagram</a>
+                    <a href="#">💼 LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <form class="contact-form">
+                <input type="text" placeholder="Tu nombre" required>
+                <input type="email" placeholder="Tu correo" required>
+                <textarea placeholder="Escribe tu mensaje..." required></textarea>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+
+        </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TechCorp. Ejercicio de navegación responsive.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para el menú hamburguesa -->
+    <script src="script.js"></script>
+</body>
+</html>

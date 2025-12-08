@@ -1,0 +1,68 @@
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif; }
+body { background:#111; color:#fff; line-height:1.6; padding:20px; }
+
+/* HEADER */
+header { text-align:center; padding:50px 20px; border-radius:20px; margin-bottom:30px; overflow:hidden; position:relative; }
+.header-bg {
+    background: linear-gradient(270deg,#ff5f6d,#ffc371,#24c6dc,#514a9d);
+    background-size: 800% 800%;
+    animation: gradientBG 15s ease infinite;
+}
+header h1 { font-size:2.5rem; margin-bottom:10px; color:white; }
+header .intro { font-size:1.2rem; color:#f0f0f0; }
+
+/* ANIMACIÓN GRADIENTE */
+@keyframes gradientBG {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* SECCIONES */
+.demo-section {
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:30px;
+    position:relative;
+    overflow:hidden;
+    transition: transform 0.3s;
+}
+.demo-section:hover { transform: translateY(-5px); }
+
+/* FONDOS ANIMADOS */
+.section-bg1 { background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#fbc2eb); background-size:400% 400%; animation: gradientMove 12s ease infinite; }
+.section-bg2 { background: linear-gradient(135deg,#a1c4fd,#c2e9fb,#cfd9df,#e2ebf0); background-size:400% 400%; animation: gradientMove 15s ease infinite; }
+.section-bg3 { background: linear-gradient(135deg,#fbc2eb,#a6c1ee,#fda085,#f6d365); background-size:400% 400%; animation: gradientMove 18s ease infinite; }
+.section-bg4 { background: linear-gradient(135deg,#84fab0,#8fd3f4,#a6c0fe,#d9a7c7); background-size:400% 400%; animation: gradientMove 20s ease infinite; }
+
+@keyframes gradientMove {
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* GRID BOX */
+.comparison-grid, .benefits-grid, .demo-boxes {
+    display:grid; gap:20px;
+}
+.comparison-grid { grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); }
+.benefits-grid { grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); }
+.demo-boxes { grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); justify-items:center; }
+
+/* BOXES */
+.box-wrapper { background: rgba(0,0,0,0.2); padding:15px; border-radius:15px; transition: transform 0.3s; }
+.box-wrapper:hover { transform: scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.3);}
+.box { padding:15px; border-radius:12px; margin-bottom:10px; background:rgba(255,255,255,0.1); border:3px solid #fff; }
+
+/* DEMO INTERACTIVA */
+.demo-box { padding:20px; width:200px; text-align:center; border-radius:15px; border:10px solid #fff; transition: all 0.4s; background:rgba(0,0,0,0.2); }
+.demo-border-box { background:rgba(255,255,255,0.1); }
+
+/* CONTROLES */
+.controls { display:flex; flex-wrap:wrap; gap:15px; margin-bottom:20px; justify-content:center; }
+.controls label { display:flex; flex-direction:column; align-items:center; font-weight:bold; }
+
+/* BENEFITS */
+.benefit { background: rgba(0,0,0,0.2); padding:15px; border-radius:15px; text-align:center; transition: transform 0.3s;}
+.benefit:hover { transform: scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.3);}

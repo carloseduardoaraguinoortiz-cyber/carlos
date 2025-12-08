@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Sizing: content-box vs border-box</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <header class="header-bg">
+            <h1>🎯 Box-Sizing Dinámico</h1>
+            <p class="intro">Aprende la diferencia entre <code>content-box</code> y <code>border-box</code> con animaciones y controles interactivos.</p>
+        </header>
+
+        <section class="demo-section section-bg1">
+            <h2>📦 Comparación de Cajas</h2>
+            <div class="comparison-grid">
+                <div class="box-wrapper">
+                    <h3>❌ content-box</h3>
+                    <div class="box content-box">
+                        <p><strong>Width declarado:</strong> 200px</p>
+                        <p><strong>Padding:</strong> 20px</p>
+                        <p><strong>Border:</strong> 10px</p>
+                        <p class="result"><strong>Tamaño total:</strong> 260px!</p>
+                    </div>
+                    <div class="calculation">
+                        <p>📐 Cálculo:</p>
+                        <code>
+200 + 20+20 + 10+10 = <strong>260px</strong>
+                        </code>
+                    </div>
+                </div>
+
+                <div class="box-wrapper">
+                    <h3>✅ border-box</h3>
+                    <div class="box border-box">
+                        <p><strong>Width declarado:</strong> 200px</p>
+                        <p><strong>Padding:</strong> 20px</p>
+                        <p><strong>Border:</strong> 10px</p>
+                        <p class="result"><strong>Tamaño total:</strong> 200px ✨</p>
+                    </div>
+                    <div class="calculation">
+                        <p>📐 Cálculo:</p>
+                        <code>
+200px total<br>
+Padding y border incluidos<br>
+= <strong>200px</strong>
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section section-bg2">
+            <h2>💡 Beneficios de border-box</h2>
+            <div class="benefits-grid">
+                <div class="benefit"><h3>✅ Predecible</h3><p>El width declarado siempre es exacto.</p></div>
+                <div class="benefit"><h3>✅ Responsive</h3><p>Ideal para layouts con grids y porcentajes.</p></div>
+                <div class="benefit"><h3>✅ Fácil de Mantener</h3><p>No recalculas al cambiar padding o border.</p></div>
+                <div class="benefit"><h3>✅ Estándar Moderno</h3><p>Usado en frameworks modernos.</p></div>
+            </div>
+        </section>
+
+        <section class="demo-section section-bg3">
+            <h2>⭐ Best Practice</h2>
+            <pre><code>
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+            </code></pre>
+            <p class="tip">💡 Incluye esto en todos tus proyectos desde el inicio.</p>
+        </section>
+
+        <section class="demo-section section-bg4">
+            <h2>🎮 Demo Interactiva</h2>
+            <p>Ajusta los valores y observa la diferencia:</p>
+            <div class="controls">
+                <label>Width: <span id="widthValue">200px</span>
+                    <input type="range" id="widthSlider" min="100" max="400" value="200">
+                </label>
+                <label>Padding: <span id="paddingValue">20px</span>
+                    <input type="range" id="paddingSlider" min="0" max="50" value="20">
+                </label>
+                <label>Border: <span id="borderValue">10px</span>
+                    <input type="range" id="borderSlider" min="0" max="30" value="10">
+                </label>
+            </div>
+            <div class="demo-boxes">
+                <div class="demo-box" id="demoContentBox">
+                    <p>content-box</p>
+                    <p id="totalContentBox">Total: 260px</p>
+                </div>
+                <div class="demo-box demo-border-box" id="demoBorderBox">
+                    <p>border-box</p>
+                    <p id="totalBorderBox">Total: 200px</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

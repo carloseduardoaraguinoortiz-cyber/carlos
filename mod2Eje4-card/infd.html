@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dominando el Box Model con Animaciones</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-45deg, #ff6ec4, #7873f5, #42e695, #f5af19);
+    background-size: 400% 400%;
+    color: #fff;
+    overflow-x: hidden;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.animated-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+.animated-bg span {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: bold;
+    color: hsl(calc(360 * var(--i) / 20), 90%, 55%);
+    text-shadow: 3px 3px 12px rgba(0,0,0,0.6);
+    top: calc(100% * var(--i) / 20);
+    left: calc(100% * var(--i) / 20);
+    animation: float 12s linear infinite, colorShift 6s ease-in-out infinite alternate;
+}
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+@keyframes colorShift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.slide-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: 100px auto;
+    perspective: 1200px;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    min-height: 600px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: rotateY(90deg);
+    transition: transform 0.8s cubic-bezier(0.645,0.045,0.355,1), opacity 0.8s;
+    backface-visibility: hidden;
+}
+.slide.active { opacity: 1; transform: rotateY(0); }
+.slide.next { transform: rotateY(-90deg); }
+
+.slide-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #ff6ec4;
+    padding-bottom: 10px;
+    animation: fadeInDown 1s ease forwards, titleColorShift 5s ease infinite alternate;
+}
+@keyframes titleColorShift {
+    0% { color: #ffec59; }
+    25% { color: #42e695; }
+    50% { color: #f5af19; }
+    75% { color: #ff6ec4; }
+    100% { color: #ffec59; }
+}
+
+.slide-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+.text-content {
+    flex: 1;
+    min-width: 300px;
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.visual-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-width: 300px;
+}
+
+ul { padding-left: 25px; line-height: 1.7; margin: 20px 0; }
+li { margin-bottom: 12px; font-size: 1.2rem; }
+
+.product-card {
+    width: 260px;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    padding: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+.product-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    border-color: #ffec59;
+}
+.card-image {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff6ec4, #42e695);
+    display: flex; justify-content: center; align-items: center;
+    color: white; font-weight: bold; font-size: 1.3rem;
+    margin-bottom: 15px;
+    animation: cardGradient 5s ease infinite alternate;
+}
+@keyframes cardGradient {
+    0% { background: linear-gradient(135deg, #ff6ec4, #42e695); }
+    50% { background: linear-gradient(135deg, #f5af19, #7873f5); }
+    100% { background: linear-gradient(135deg, #ff6ec4, #42e695); }
+}
+.card-title { font-weight: bold; color: #fff; font-size: 1.3rem; margin-bottom: 8px; }
+.card-price { color: #ffec59; font-weight: bold; font-size: 1.4rem; margin-bottom: 8px; }
+.card-description { color: #f1f1f1; font-size: 0.95rem; line-height: 1.4; min-height: 60px; margin-bottom: 12px; }
+.card-button {
+    width: 100%; padding: 10px 0;
+    background: #ff6ec4; color: white; border: none; border-radius: 6px;
+    font-weight: bold; cursor: pointer;
+    transition: all 0.3s ease;
+}
+.card-button:hover { background: #f5af19; transform: translateY(-2px); }
+
+.slide-counter {
+    position: absolute;
+    bottom: 20px; right: 30px;
+    font-size: 1.2rem; font-weight: bold; color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.nav-container {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; display: flex;
+    justify-content: space-between; padding: 0 40px;
+    z-index: 2;
+}
+.nav-side { display: flex; flex-direction: column; justify-content: center; pointer-events: none; }
+.nav-side-btn {
+    pointer-events: all;
+    width: 60px; height: 60px;
+    border-radius: 50%; background: rgba(255,236,89,0.9);
+    color: #2c3e50; border: none; font-size: 1.8rem;
+    cursor: pointer; transition: all 0.3s;
+    display: flex; justify-content: center; align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.nav-side-btn:hover { background: #ff6ec4; transform: scale(1.1); }
+.nav-side-btn:active { transform: scale(0.95); }
+
+@media(max-width: 950px) {
+    .slide-container { width: 95%; margin: 50px auto; }
+    .slide { padding: 30px; }
+    .slide-title { font-size: 2rem; }
+    .nav-container { padding: 0 20px; }
+    .nav-side-btn { width: 50px; height: 50px; font-size: 1.5rem; }
+}
+
+@keyframes fadeInDown { 0% {opacity:0; transform: translateY(-30px);} 100% {opacity:1; transform: translateY(0);} }
+@keyframes fadeIn { 0% {opacity:0;} 100% {opacity:1;} }
+
+</style>
+</head>
+<body>
+
+<div class="animated-bg">
+    <span style="--i:0;">C</span><span style="--i:1;">S</span><span style="--i:2;">S</span>
+    <span style="--i:3;">B</span><span style="--i:4;">O</span><span style="--i:5;">X</span>
+    <span style="--i:6;">M</span><span style="--i:7;">O</span><span style="--i:8;">D</span>
+    <span style="--i:9;">E</span><span style="--i:10;">L</span><span style="--i:11;">A</span>
+    <span style="--i:12;">N</span><span style="--i:13;">I</span><span style="--i:14;">M</span>
+    <span style="--i:15;">A</span><span style="--i:16;">C</span><span style="--i:17;">I</span>
+    <span style="--i:18;">Ó</span><span style="--i:19;">N</span>
+</div>
+
+<div class="slide-container">
+    <!-- Slide 1 -->
+    <div class="slide active">
+        <h2 class="slide-title">Introducción al Box Model</h2>
+        <div class="slide-content">
+            <div class="text-content">
+                <p>El Box Model es la base del diseño web moderno. Cada elemento HTML es una "caja" con:</p>
+                <ul>
+                    <li><strong>Contenido:</strong> texto, imagen o video dentro del elemento.</li>
+                    <li><strong>Padding:</strong> espacio entre contenido y borde.</li>
+                    <li><strong>Borde:</strong> delimita la caja y puede tener grosor y color.</li>
+                    <li><strong>Margin:</strong> espacio entre la caja y otras cajas.</li>
+                </ul>
+            </div>
+            <div class="visual-content">
+                <div class="product-card">
+                    <div class="card-image">Contenido</div>
+                    <div class="card-title">Caja HTML</div>
+                    <div class="card-description">Ejemplo visual de cómo se aplica padding, borde y margin.</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">1/6</div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+        <h2 class="slide-title">Padding y su impacto</h2>
+        <div class="slide-content">
+            <div class="text-content">
+                <p>El padding separa el contenido del borde, aumentando la legibilidad y estética.</p>
+                <ul>
+                    <li>Padding interno evita que el texto toque los bordes.</li>
+                    <li>Puede definirse en px, em, rem o %.</li>
+                    <li>Se puede aplicar individualmente a cada lado.</li>
+                </ul>
+            </div>
+            <div class="visual-content">
+                <div class="product-card">
+                    <div class="card-image">Padding</div>
+                    <div class="card-title">Espacio interno</div>
+                    <div class="card-description">Este ejemplo muestra padding aplicado a la tarjeta.</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">2/6</div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+        <h2 class="slide-title">Bordes y estilo visual</h2>
+        <div class="slide-content">
+            <div class="text-content">
+                <p>El borde define la caja y puede tener diferentes estilos y grosores.</p>
+                <ul>
+                    <li>border-style: solid, dashed, dotted...</li>
+                    <li>border-width: delgado a grueso.</li>
+                    <li>border-radius: esquinas redondeadas.</li>
+                </ul>
+            </div>
+            <div class="visual-content">
+                <div class="product-card">
+                    <div class="card-image">Borde</div>
+                    <div class="card-title">Border Radius</div>
+                    <div class="card-description">Visualización de cómo un borde cambia la percepción de la tarjeta.</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">3/6</div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+        <h2 class="slide-title">Margen entre cajas</h2>
+        <div class="slide-content">
+            <div class="text-content">
+                <p>El margin separa elementos entre sí, evitando que se superpongan.</p>
+                <ul>
+                    <li>Margin externo controla la separación.</li>
+                    <li>Puede definirse en todas direcciones o individualmente.</li>
+                </ul>
+            </div>
+            <div class="visual-content">
+                <div class="product-card">
+                    <div class="card-image">Margin</div>
+                    <div class="card-title">Separación</div>
+                    <div class="card-description">Se muestra cómo el margen crea espacio entre tarjetas.</div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">4/6</div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+        <h2 class="slide-title">Ejemplo práctico: Tarjeta de producto</h2>
+        <div class="slide-content">
+            <div class="text-content">
+                <p>Aplicando Box Model y animaciones en un diseño real de producto.</p>
+            </div>
+            <div class="visual-content">
+                <div class="product-card">
+                    <div class="card-image">Smartwatch</div>
+                    <div class="card-title">Reloj Inteligente</div>
+                    <div class="card-price">$199</div>
+                    <div class="card-description">Ideal para monitoreo de actividad física y notificaciones.</div>
+                    <button class="card-button">Comprar</button>
+                </div>
+                <div class="product-card">
+                    <div class="card-image">Gafas</div>
+                    <div class="card-title">Gafas Modernas</div>
+                    <div class="card-price">$89</div>
+                    <div class="card-description">Diseño elegante y protección UV para todos los días.</div>
+                    <button class="card-button">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">5/6</div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide">
+        <h2 class="slide-title">Conclusiones y Tips</h2>
+        <div class="slide-content">
+            <div class="text-content">
+                <ul>
+                    <li>Box Model es fundamental para estructurar cualquier diseño web.</li>
+                    <li>Padding, border y margin controlan el espacio y la estética.</li>
+                    <li>Aplicar animaciones y efectos hover mejora la interacción.</li>
+                    <li>Usar tarjetas visuales permite ejemplos claros y didácticos.</li>
+                </ul>
+                <p>Experimenta combinando colores, sombras y animaciones para un diseño profesional.</p>
+            </div>
+        </div>
+        <div class="slide-counter">6/6</div>
+    </div>
+</div>
+
+<div class="nav-container">
+    <div class="nav-side"><button class="nav-side-btn prev-btn" id="prev">←</button></div>
+    <div class="nav-side"><button class="nav-side-btn next-btn" id="next">→</button></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    let currentSlide = 0;
+
+    function updateSlides() {
+        slides.forEach((slide,index)=>{
+            slide.classList.remove('active','next');
+            if(index===currentSlide) slide.classList.add('active');
+            else if(index===currentSlide+1) slide.classList.add('next');
+        });
+        slides.forEach(slide=>{
+            const counter = slide.querySelector('.slide-counter');
+            if(counter) counter.textContent = `${currentSlide+1}/${slides.length}`;
+        });
+    }
+
+    prevBtn.addEventListener('click',()=>{ if(currentSlide>0){currentSlide--;updateSlides();}});
+    nextBtn.addEventListener('click',()=>{ if(currentSlide<slides.length-1){currentSlide++;updateSlides();}});
+
+    document.addEventListener('keydown',e=>{
+        if(e.key==='ArrowLeft'&&currentSlide>0){currentSlide--;updateSlides();}
+        else if(e.key==='ArrowRight'&&currentSlide<slides.length-1){currentSlide++;updateSlides();}
+    });
+
+    // Swipe para móviles
+    let touchStartX=0, touchEndX=0;
+    const container = document.querySelector('.slide-container');
+    container.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX;});
+    container.addEventListener('touchend',e=>{touchEndX=e.changedTouches[0].screenX; handleSwipe();});
+    function handleSwipe(){
+        if(touchStartX-touchEndX>50 && currentSlide<slides.length-1){ currentSlide++; updateSlides(); }
+        else if(touchEndX-touchStartX>50 && currentSlide>0){ currentSlide--; updateSlides(); }
+    }
+
+    updateSlides();
+});
+</script>
+</body>
+</html>

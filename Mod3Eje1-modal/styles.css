@@ -1,0 +1,183 @@
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+/* BODY CON FONDO ANIMADO */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-45deg, #ff6ec4, #7873f5, #42e695, #f5af19);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+}
+@keyframes gradientBG {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    text-align: center;
+    max-width: 700px;
+    z-index: 1;
+}
+.container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: titleColorShift 5s ease infinite alternate;
+}
+@keyframes titleColorShift {
+    0% { color: #ffec59; }
+    25% { color: #42e695; }
+    50% { color: #f5af19; }
+    75% { color: #ff6ec4; }
+    100% { color: #ffec59; }
+}
+
+/* BOTON ABRIR */
+.btn-open {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #ff6ec4;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+.btn-open:hover { background: #f5af19; transform: scale(1.05); }
+
+/* INFO */
+.info {
+    text-align: left;
+    margin-top: 20px;
+    background: rgba(0,0,0,0.3);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.info ul { list-style-type: disc; padding-left: 20px; }
+.info li { margin-bottom: 8px; }
+
+/* AUTOR */
+.author {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* MODAL OVERLAY */
+.modal-overlay {
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.8); /* más opaco para bloquear contenido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 9999;
+}
+
+/* cuando está activo */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* MODAL */
+.modal {
+    background: #1e1e2f; /* fondo sólido */
+    border-radius: 16px;
+    padding: 30px 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.9);
+    transform: scale(0.8);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+    z-index: 10000;
+}
+.modal-overlay.active .modal {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* BOTON CERRAR */
+.btn-close {
+    position: absolute;
+    top: 15px; right: 15px;
+    background: #ff6ec4;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 35px; height: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-close:hover { background: #f5af19; transform: scale(1.1); }
+
+/* ICONO DEL MODAL */
+.modal-icon svg {
+    width: 64px; height: 64px;
+    margin-bottom: 15px;
+    stroke: #ffec59;
+    animation: iconPulse 2s infinite;
+}
+@keyframes iconPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* MODAL TITULO */
+.modal h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    animation: titleColorShift 5s ease infinite alternate;
+}
+
+/* FEATURES */
+.modal-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+.feature-icon {
+    color: #42e695;
+    font-weight: bold;
+    animation: iconPulse 2s infinite;
+}
+
+/* BOTON ACCION */
+.btn-modal-action {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #42e695;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-modal-action:hover { background: #ff6ec4; transform: scale(1.05); }

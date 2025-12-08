@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sticky Navbar Animado Responsivo</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navbar Sticky -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="logo">
+      <span class="logo-icon">🚀</span>
+      <span class="logo-text">StickyNav</span>
+    </a>
+    <button class="nav-toggle" id="navToggle">
+      <span class="hamburger"></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#inicio" class="nav-link">Inicio</a></li>
+      <li><a href="#features" class="nav-link">Features</a></li>
+      <li><a href="#pricing" class="nav-link">Precios</a></li>
+      <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+      <li><a href="#contacto" class="nav-link btn-cta">Comenzar</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="inicio" class="hero">
+  <div class="container">
+    <h1 class="hero-title">🎯 Navbar Sticky Animado</h1>
+    <p class="subtitle">Scroll hacia abajo y observa cómo la navegación se "pega" en la parte superior</p>
+    <div class="scroll-indicator"><p>Scroll Down ↓</p></div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="section">
+  <div class="container">
+    <h2 class="section-title">✨ Características</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">📍</div>
+        <h3>Se Pega al Scrollear</h3>
+        <p>Al llegar a <code>top: 0</code>, el navbar se comporta como <code>fixed</code></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔄</div>
+        <h3>En el Flujo del Documento</h3>
+        <p>Sticky permanece en el flujo normal, diferente a <code>fixed</code></p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">⚡</div>
+        <h3>Mejor Performance</h3>
+        <p>No requiere JS, aunque JS mejora la experiencia</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎨</div>
+        <h3>Estilos Dinámicos</h3>
+        <p>Cambia de apariencia al estar "pegado" usando JS</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">💰 Precios</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Básico</h3>
+        <p class="price">$9<span>/mes</span></p>
+        <ul>
+          <li>✔️ 5 Proyectos</li>
+          <li>✔️ 10GB Almacenamiento</li>
+          <li>✔️ Soporte Email</li>
+        </ul>
+        <button>Seleccionar</button>
+      </div>
+      <div class="pricing-card featured">
+        <div class="badge">Popular</div>
+        <h3>Pro</h3>
+        <p class="price">$29<span>/mes</span></p>
+        <ul>
+          <li>✔️ Proyectos Ilimitados</li>
+          <li>✔️ 100GB Almacenamiento</li>
+          <li>✔️ Soporte Prioritario</li>
+        </ul>
+        <button>Seleccionar</button>
+      </div>
+      <div class="pricing-card">
+        <h3>Enterprise</h3>
+        <p class="price">$99<span>/mes</span></p>
+        <ul>
+          <li>✔️ Todo Ilimitado</li>
+          <li>✔️ 1TB Almacenamiento</li>
+          <li>✔️ Soporte 24/7</li>
+        </ul>
+        <button>Contactar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonios" class="section">
+  <div class="container">
+    <h2 class="section-title">💬 Testimonios</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p class="quote">"El navbar sticky mejoró significativamente la navegación en nuestro sitio."</p>
+        <p class="author">- María García</p>
+      </div>
+      <div class="testimonial">
+        <p class="quote">"Implementar position: sticky fue mucho más fácil de lo que pensaba."</p>
+        <p class="author">- Carlos Pérez</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contacto" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">📧 Contacto</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Mensaje" rows="5" required></textarea>
+      <button type="submit" class="btn-submit">Enviar Mensaje</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 StickyNav Demo. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- Botón "Volver Arriba" -->
+<button class="btn-top" id="btnTop" title="Volver arriba">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

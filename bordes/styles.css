@@ -1,0 +1,72 @@
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', sans-serif; }
+body { background:#f0f2f5; color:#fff; line-height:1.6; padding:20px; }
+
+/* HEADER */
+header { text-align:center; padding:50px 20px; border-radius:20px; margin-bottom:30px; position:relative; overflow:hidden; }
+.header-bg {
+    background: linear-gradient(270deg, #ff5f6d, #ffc371, #24c6dc, #514a9d);
+    background-size: 800% 800%;
+    animation: gradientBG 15s ease infinite;
+}
+header h1 { font-size:2.5rem; margin-bottom:10px; color:white; }
+header .subtitle { font-size:1.2rem; color:#f0f0f0; }
+
+/* ANIMACION GRADIENTE */
+@keyframes gradientBG {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+/* SECCIONES CON FONDOS ANIMADOS */
+.demo-section {
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:30px;
+    color:white;
+    position:relative;
+    overflow:hidden;
+    transition: transform 0.3s;
+}
+.demo-section:hover { transform: translateY(-5px); }
+
+/* Gradientes animados de fondo */
+.section-bg1 { background: linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#fbc2eb); background-size: 400% 400%; animation: gradientMove 12s ease infinite; }
+.section-bg2 { background: linear-gradient(135deg,#a1c4fd,#c2e9fb,#cfd9df,#e2ebf0); background-size: 400% 400%; animation: gradientMove 15s ease infinite; }
+.section-bg3 { background: linear-gradient(135deg,#fbc2eb,#a6c1ee,#fda085,#f6d365); background-size: 400% 400%; animation: gradientMove 18s ease infinite; }
+.section-bg4 { background: linear-gradient(135deg,#ffecd2,#fcb69f,#ff9a9e,#fecfef); background-size: 400% 400%; animation: gradientMove 20s ease infinite; }
+.section-bg5 { background: linear-gradient(135deg,#84fab0,#8fd3f4,#a6c0fe,#d9a7c7); background-size: 400% 400%; animation: gradientMove 15s ease infinite; }
+.section-bg6 { background: linear-gradient(135deg,#f093fb,#f5576c,#4facfe,#00f2fe); background-size: 400% 400%; animation: gradientMove 17s ease infinite; }
+
+@keyframes gradientMove {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+/* GRID BOX */
+.border-styles-grid, .individual-borders-grid, .radius-grid, .shapes-grid, .cards-grid, .buttons-demo {
+    display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:20px; align-items:center; justify-items:center;
+}
+
+/* BORDER BOX */
+.border-box, .radius-box, .shape-container, .card, .btn {
+    padding:15px; border-radius:15px; text-align:center; transition: transform 0.4s, box-shadow 0.4s; cursor:pointer;
+}
+.border-box:hover, .radius-box:hover, .shape-container:hover, .card:hover, .btn:hover { transform: scale(1.1); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+/* BOTONES */
+.btn { border:none; padding:12px 20px; font-weight:bold; color:white; background:#333; border-radius:12px; transition: all 0.3s;}
+.btn:hover { background:#555; transform: scale(1.1); }
+
+/* CARDS */
+.card { padding:20px; border-radius:20px; transition: transform 0.3s, box-shadow 0.3s; }
+.card-simple { background: rgba(0,0,0,0.2); }
+.card-thick { background: rgba(255,255,255,0.2); }
+.card-accent { background: rgba(0,0,0,0.3); }
+.card-dashed { background: rgba(255,255,255,0.3); }
+
+/* SHAPES */
+.shape { width:100px; height:100px; margin:0 auto; border-radius:50%; background:linear-gradient(45deg,#ff512f,#dd2476); transition: transform 0.5s, background 1s;}
+.shape:hover { transform: scale(1.2) rotate(15deg); background:linear-gradient(45deg,#f7971e,#ffd200);}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Responsive Mejorada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>🏙️ Galería Interactiva</h1>
+        <p>Redimensiona la ventana para ver cómo se adapta el diseño</p>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container">
+
+        <!-- SRCSET -->
+        <section class="card">
+            <h2>1. Imágenes Responsivas (Srcset)</h2>
+            <p>El navegador selecciona automáticamente la mejor imagen según el tamaño de pantalla.</p>
+            
+            <img 
+                src="https://placehold.co/400x300/ff7f50/fff?text=Fallback" 
+                srcset="
+                    https://placehold.co/400x300/ff7f50/fff?text=Small+400w 400w,
+                    https://placehold.co/800x600/ff6347/fff?text=Medium+800w 800w,
+                    https://placehold.co/1200x900/ff4500/fff?text=Large+1200w 1200w
+                "
+                sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                alt="Ejemplo de srcset"
+                loading="lazy"
+                class="responsive-img enhanced-img"
+            >
+        </section>
+
+        <hr class="divider">
+
+        <!-- PICTURE -->
+        <section class="card">
+            <h2>2. Picture (Art Direction)</h2>
+            <p>Imagen vertical para móviles y horizontal para escritorio.</p>
+            
+            <picture>
+                <source 
+                    media="(min-width: 1024px)" 
+                    srcset="https://placehold.co/1200x400/1abc9c/fff?text=Desktop+Wide"
+                >
+                <source 
+                    media="(min-width: 768px)" 
+                    srcset="https://placehold.co/800x500/16a085/fff?text=Tablet"
+                >
+                <img 
+                    src="https://placehold.co/400x400/2ecc71/fff?text=Mobile+Square" 
+                    alt="Ejemplo de art direction"
+                    loading="lazy"
+                    class="responsive-img enhanced-img"
+                >
+            </picture>
+        </section>
+
+        <hr class="divider">
+
+        <!-- HERO BACKGROUND -->
+        <section class="card">
+            <h2>3. Fondo Responsivo (CSS)</h2>
+            <p>El fondo se adapta según el tamaño de la pantalla.</p>
+            
+            <div class="hero-background">
+                <h3>🌟 Fondo Moderno y Adaptable</h3>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>Diseño moderno y responsive • Ejercicio completo</p>
+    </footer>
+
+</body>
+</html>

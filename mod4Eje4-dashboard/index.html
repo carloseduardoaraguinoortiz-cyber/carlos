@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoDashboard Pro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="brand">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968523.png" class="brand-logo">
+                <h2>NeoDash</h2>
+            </div>
+
+            <nav class="menu">
+                <a class="item active"><span>🏠</span> Inicio</a>
+                <a class="item"><span>📈</span> Analíticas</a>
+                <a class="item"><span>🛍️</span> Productos</a>
+                <a class="item"><span>👥</span> Clientes</a>
+                <a class="item"><span>💼</span> Proyectos</a>
+                <a class="item"><span>⚙️</span> Ajustes</a>
+            </nav>
+        </aside>
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+
+            <input type="search" class="search" placeholder="Buscar en el panel…">
+
+            <div class="header-right">
+                <button class="icon">🔔<span class="badge">2</span></button>
+                <button class="icon">✉️<span class="badge">4</span></button>
+
+                <div class="profile">
+                    <img src="https://i.pravatar.cc/50">
+                    <span>Carlos Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- TITULO -->
+            <div class="title-area">
+                <h1>Panel Administrativo</h1>
+                <button class="btn-add">+ Crear Nuevo</button>
+            </div>
+
+            <!-- TARJETAS -->
+            <div class="stats">
+
+                <div class="card blue">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="icon-img">
+                    <h3>3,200</h3>
+                    <p>Usuarios activos</p>
+                </div>
+
+                <div class="card green">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" class="icon-img">
+                    <h3>$58,690</h3>
+                    <p>Ingresos del mes</p>
+                </div>
+
+                <div class="card purple">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2331/2331970.png" class="icon-img">
+                    <h3>980</h3>
+                    <p>Pedidos procesados</p>
+                </div>
+
+                <div class="card orange">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" class="icon-img">
+                    <h3>4.9</h3>
+                    <p>Calificación Global</p>
+                </div>
+
+            </div>
+
+            <!-- CONTENIDO GRILLA -->
+            <div class="grid">
+
+                <!-- ACTIVIDAD -->
+                <div class="panel">
+                    <h2>Actividad Reciente</h2>
+
+                    <div class="activity">
+                        <img src="https://cdn-icons-png.flaticon.com/512/878/878052.png">
+                        <div>
+                            <p><b>Nuevo Registro</b></p>
+                            <span>Hace 10 minutos</span>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3500/3500833.png">
+                        <div>
+                            <p><b>Venta realizada: $150</b></p>
+                            <span>Hace 30 minutos</span>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <img src="https://cdn-icons-png.flaticon.com/512/4379/4379273.png">
+                        <div>
+                            <p><b>Nuevo comentario 5★</b></p>
+                            <span>Hace 1 hora</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTOS -->
+                <div class="panel">
+                    <h2>Productos Destacados</h2>
+                    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Ventas</th>
+                                <th>Ganancias</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Audífonos Pro</td>
+                                <td>320</td>
+                                <td>$14,200</td>
+                            </tr>
+                            <tr>
+                                <td>Smartwatch Z</td>
+                                <td>289</td>
+                                <td>$12,850</td>
+                            </tr>
+                            <tr>
+                                <td>Mouse Gamer X</td>
+                                <td>210</td>
+                                <td>$9,760</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- IMAGEN DESTACADA -->
+                <div class="panel full-image">
+                    <h2>Campaña del Mes</h2>
+
+                    <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" class="hero">
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- SCRIPT MENU MOBILE -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

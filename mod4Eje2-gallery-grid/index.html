@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moto Gallery | CSS Grid Auto-fit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <h1>🏍️ Moto Gallery</h1>
+        <p class="subtitle">
+            Galería Responsive con <code>auto-fit</code> y <code>minmax()</code> — 
+            <strong>Diseño Moderno</strong>
+        </p>
+    </header>
+
+    <!-- GALERÍA -->
+    <section class="gallery">
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?w=900&h=900&fit=crop" alt="">
+            <div class="overlay"><h3>Honda CBR</h3><p>Sport</p></div>
+        </div>
+
+        <div class="gallery-item featured">
+            <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=900&h=900&fit=crop" alt="">
+            <div class="overlay"><h3>BMW R NineT</h3><p>Café Racer</p></div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=900&h=900&fit=crop" alt="">
+            <div class="overlay"><h3>Ducati Monster</h3><p>Roadster</p></div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1473654729523-203e25dfda10?w=900&h=900&fit=crop" alt="">
+            <div class="overlay"><h3>Triumph Bonneville</h3><p>Classic</p></div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?w=900&h=900&fit=crop" alt="">
+            <div class="overlay"><h3>Yamaha MT-07</h3><p>Street</p></div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1493238792000-8113da705763?w=900&h=900&fit=crop" alt="">
+            <div class="overlay"><h3>Kawasaki Ninja</h3><p>SuperSport</p></div>
+        </div>
+
+        <div class="gallery-item featured">
+            <img src="https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?w=900&h=900&fit=crop" alt="">
+            <div class="overlay"><h3>Harley Davidson</h3><p>Cruiser</p></div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1462396881884-de2c07cb95ed?w=900&h=900&fit=crop" alt="">
+            <div class="overlay"><h3>Africa Twin</h3><p>Adventure</p></div>
+        </div>
+
+    </section>
+
+    <!-- EXPLICACIÓN -->
+    <section class="explanation">
+        <h2>⚙️ Cómo Funciona Este Grid</h2>
+
+        <div class="code-example">
+            <h3>CSS Base</h3>
+<pre><code>.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+}</code></pre>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature"><h4>🏍 Responsive</h4><p>Adaptación automática.</p></div>
+            <div class="feature"><h4>📏 Minmax()</h4><p>220px mínimo por card.</p></div>
+            <div class="feature"><h4>🔳 Auto-fit</h4><p>Llena filas dinámicamente.</p></div>
+            <div class="feature"><h4>⚡ Sin Media Queries</h4><p>Sistema inteligente.</p></div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

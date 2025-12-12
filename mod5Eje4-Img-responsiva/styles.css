@@ -1,0 +1,96 @@
+/* ------------------------------
+   ESTILOS GENERALES
+--------------------------------*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ececec;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    color: #333;
+}
+
+header p {
+    color: #666;
+}
+
+/* ------------------------------
+   GALERÍA RESPONSIVE
+--------------------------------*/
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.20);
+    transition: transform .3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform .40s ease-out;
+}
+
+/* -------- EFECTO ORIGINAL MEJORADO -------- */
+.gallery-item:hover img {
+    transform: scale(1.12);
+}
+
+/* Overlay ORIGINAL pero más elegante */
+/* Overlay oculto abajo */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(
+        to top,
+        rgba(40, 0, 80, 0.85),
+        rgba(40, 0, 80, 0.2),
+        transparent
+    );
+    color: #fff;
+
+    /* 🔥 EFECTO: comienza abajo */
+    transform: translateY(100%);
+    opacity: 0;
+
+    transition: transform .35s ease-out, opacity .35s ease-out;
+}
+
+/* Overlay sube al hacer hover */
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ------------------------------
+   RESPONSIVE EXTRA
+--------------------------------*/
+@media (max-width: 480px) {
+    .gallery-item img {
+        height: 180px;
+    }
+}

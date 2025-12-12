@@ -1,0 +1,125 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+    --fs-base: clamp(1rem, 0.9rem + 0.5vw, 1.3rem);
+    --fs-h2: clamp(1.8rem, 1.4rem + 2vw, 2.8rem);
+    --color-bg: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    --color-card-bg: rgba(255, 255, 255, 0.05);
+    --color-accent: #ff7f50;
+}
+
+/* BODY */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--color-bg);
+    color: #fff;
+    font-size: var(--fs-base);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: var(--fs-h2);
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+/* CARDS */
+.card {
+    background: var(--color-card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* IMÁGENES */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,0.1);
+}
+
+.enhanced-img {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.enhanced-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* DIVIDER */
+.divider {
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 40px 0;
+}
+
+/* HERO BACKGROUND */
+.hero-background {
+    height: 260px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    background: linear-gradient(135deg, #8e44ad, #3498db);
+    background-size: cover;
+    background-position: center;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-background:hover {
+    transform: scale(1.02);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0.85;
+    color: #ffd700;
+}
+
+/* MÓVILES */
+@media (max-width: 480px) {
+    .card {
+        padding: 15px;
+    }
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    .hero-background {
+        height: 200px;
+    }
+}

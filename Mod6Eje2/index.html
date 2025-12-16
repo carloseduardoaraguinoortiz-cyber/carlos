@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Reordenado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .card-hover:hover {
+            transform: translateY(-5px) scale(1.02);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .icon-animate {
+            animation: bounceIn 0.8s ease forwards;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-pink-500 to-purple-600 shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <span class="text-3xl font-extrabold text-white">DashPro</span>
+                <div class="flex items-center gap-4">
+                    <button class="p-2 rounded-lg hover:bg-white hover:bg-opacity-20 transition">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                        </svg>
+                    </button>
+                    <img src="https://i.pravatar.cc/40" alt="User" class="w-10 h-10 rounded-full border-2 border-white">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="flex pt-20">
+
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow-lg min-h-screen sticky top-16">
+            <nav class="mt-8">
+                <a href="#" class="flex items-center px-6 py-3 text-gray-700 bg-pink-100 border-r-4 border-pink-600 rounded-r-xl mb-2 hover:bg-pink-200 transition">
+                    <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 12l2-2 7-7 7 7 2 2-2 2v7H5v-7l-2-2z"/>
+                    </svg>
+                    <span class="ml-3 font-medium">Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 rounded-r-xl transition mb-2">
+                    <svg class="w-6 h-6 text-teal-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4s-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                    <span class="ml-3">Usuarios</span>
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 rounded-r-xl transition mb-2">
+                    <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 3h18v2H3V3zm0 4h18v2H3V7zm0 4h18v2H3v-2zm0 4h18v2H3v-2z"/>
+                    </svg>
+                    <span class="ml-3">Analíticas</span>
+                </a>
+                <a href="#" class="flex items-center px-6 py-3 text-gray-600 hover:bg-gray-100 rounded-r-xl transition mb-2">
+                    <svg class="w-6 h-6 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7l3-7z"/>
+                    </svg>
+                    <span class="ml-3">Configuración</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-8">Dashboard</h1>
+
+            <!-- Cards reorganizados: usuarios, ingresos, satisfacción, pedidos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+
+                <!-- Total Usuarios -->
+                <div class="bg-teal-500 text-white rounded-2xl shadow-lg p-6 card-hover">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm">Total Usuarios</p>
+                            <p class="text-3xl font-bold">2,543</p>
+                            <p class="text-teal-200 text-sm mt-2">↑ 12.5%</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-full icon-animate">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4s-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ingresos -->
+                <div class="bg-yellow-500 text-white rounded-2xl shadow-lg p-6 card-hover">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm">Ingresos</p>
+                            <p class="text-3xl font-bold">$45,678</p>
+                            <p class="text-yellow-200 text-sm mt-2">↑ 8.2%</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-full icon-animate">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11 11-4.925 11-11S18.075 1 12 1zm1 17.93c-2.83.48-5.41-1.62-5.41-4.38h2.11c0 1.54 1.37 2.79 3.3 2.39 1.03-.22 1.71-1.1 1.71-2.05 0-1.12-.88-1.84-2.46-2.2C9.39 12 7.9 10.94 7.9 9.03c0-1.78 1.42-3.3 3.1-3.58V4h2v1.47c1.76.34 3 1.72 3 3.53h-2.11c0-1.33-1.12-2.33-2.53-2.14-.85.12-1.36.78-1.36 1.5 0 .92.71 1.4 2.31 1.79 2.01.49 3.72 1.52 3.72 3.75 0 2.1-1.52 3.66-3.69 4.03V20h-2v-1.07z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Satisfacción -->
+                <div class="bg-purple-500 text-white rounded-2xl shadow-lg p-6 card-hover">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm">Satisfacción</p>
+                            <p class="text-3xl font-bold">4.8</p>
+                            <p class="text-purple-200 text-sm mt-2">↑ 0.3</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-full icon-animate">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pedidos -->
+                <div class="bg-red-500 text-white rounded-2xl shadow-lg p-6 card-hover">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm">Pedidos</p>
+                            <p class="text-3xl font-bold">1,234</p>
+                            <p class="text-red-200 text-sm mt-2">↓ 3.1%</p>
+                        </div>
+                        <div class="bg-white bg-opacity-20 p-4 rounded-full icon-animate">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 8h-3V4H7v4H4l-1 2v2h2l1 8h12l1-8h2v-2l-1-2zm-5 0H9V6h6v2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tabla de Pedidos Recientes -->
+            <div class="bg-white rounded-2xl shadow overflow-hidden">
+                <div class="px-6 py-4 border-b border-gray-200">
+                    <h2 class="text-xl font-semibold text-gray-800">Pedidos Recientes</h2>
+                </div>
+                <table class="w-full">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">ID</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Cliente</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Producto</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Fecha</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Monto</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 text-sm text-gray-900">#1234</td>
+                            <td class="px-6 py-4 text-sm text-gray-900">Juan Pérez</td>
+                            <td class="px-6 py-4 text-sm text-gray-900">Laptop Pro</td>
+                            <td class="px-6 py-4 text-sm text-gray-500">2024-01-15</td>
+                            <td class="px-6 py-4 text-sm text-gray-900">$1,299</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-semibold text-teal-800 bg-teal-100 rounded-full">Completado</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 text-sm text-gray-900">#1235</td>
+                            <td class="px-6 py-4 text-sm text-gray-900">María García</td>
+                            <td class="px-6 py-4 text-sm text-gray-900">Mouse Wireless</td>
+                            <td class="px-6 py-4 text-sm text-gray-500">2024-01-15</td>
+                            <td class="px-6 py-4 text-sm text-gray-900">$49</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-semibold text-yellow-800 bg-yellow-100 rounded-full">Pendiente</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-6 py-4 text-sm text-gray-900">#1236</td>
+                            <td class="px-6 py-4 text-sm text-gray-900">Carlos López</td>
+                            <td class="px-6 py-4 text-sm text-gray-900">Teclado Mecánico</td>
+                            <td class="px-6 py-4 text-sm text-gray-500">2024-01-14</td>
+                            <td class="px-6 py-4 text-sm text-gray-900">$129</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-semibold text-red-800 bg-red-100 rounded-full">Procesando</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

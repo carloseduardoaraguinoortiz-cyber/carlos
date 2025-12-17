@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Mundial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="clock-card">
+
+        <div class="greeting" id="greeting">Buenos días</div>
+
+        <div class="time-display">
+            <div class="time" id="time">00:00:00</div>
+            <div class="period" id="period">AM</div>
+        </div>
+
+        <div class="date" id="date"></div>
+
+        <div class="controls">
+            <button class="btn" id="formatBtn">Cambiar a 24h</button>
+            <button class="btn secondary" id="themeBtn">Cambiar tema</button>
+        </div>
+
+        <div class="controls">
+            <select id="timezoneSelect" class="select">
+                <option value="local">🌍 Hora local</option>
+                <option value="America/New_York">🇺🇸 Estados Unidos</option>
+                <option value="America/Mexico_City">🇲🇽 México</option>
+                <option value="America/La_Paz">🇧🇴 Bolivia</option>
+                <option value="America/Buenos_Aires">🇦🇷 Argentina</option>
+                <option value="Europe/Madrid">🇪🇸 España</option>
+                <option value="Europe/London">🇬🇧 Reino Unido</option>
+                <option value="Asia/Tokyo">🇯🇵 Japón</option>
+            </select>
+        </div>
+
+        <div class="timezone-info">
+            <span class="label">Zona horaria:</span>
+            <span id="timezone">Hora local</span>
+        </div>
+
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">📅</div>
+            <div class="stat-value" id="dayOfYear">1</div>
+            <div class="stat-label">Día del año</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">📆</div>
+            <div class="stat-value" id="weekNumber">1</div>
+            <div class="stat-label">Semana</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">⏱️</div>
+            <div class="stat-value" id="secondsToday">0</div>
+            <div class="stat-label">Segundos hoy</div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

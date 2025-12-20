@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f6fb;
+    color: #1a1a1a;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ef4444;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 14px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .4s ease;
+    z-index: 2000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+/* Cart icon */
+.cart-icon {
+    font-size: 1.6rem;
+    position: relative;
+}
+
+.cart-icon span {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background: #4f46e5;
+    color: white;
+    font-size: .7rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Layout */
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 2rem;
+    padding: 2rem 3rem;
+}
+
+/* Products */
+.section-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.card.out {
+    opacity: .5;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.img-box {
+    height: 180px;
+    overflow: hidden;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card h3 {
+    padding: .8rem 1rem 0;
+}
+
+.card p {
+    padding: 0 1rem;
+    font-size: .9rem;
+    color: #555;
+}
+
+.stock {
+    padding: .3rem 1rem;
+    font-size: .8rem;
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.card strong {
+    display: block;
+    padding: .5rem 1rem;
+}
+
+.card button {
+    margin: 1rem;
+    width: calc(100% - 2rem);
+    padding: .7rem;
+    border: none;
+    border-radius: 12px;
+    background: #4f46e5;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.card button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Cart */
+.cart {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 25px rgba(0,0,0,.08);
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    margin-bottom: .8rem;
+}
+
+.cart-item img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item button {
+    margin-left: auto;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Summary */
+.summary {
+    margin-top: 1rem;
+}
+
+.summary div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.total {
+    font-weight: 700;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    padding: .7rem;
+    margin-top: .7rem;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.primary {
+    background: #4f46e5;
+    color: white;
+    border: none;
+}
+
+.outline {
+    background: transparent;
+    border: 2px solid #4f46e5;
+    color: #4f46e5;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    text-align: center;
+}

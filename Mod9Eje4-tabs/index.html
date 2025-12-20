@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs Dinámicos Glass Neon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="tabs-app glass">
+        <h1>✨ Tabs Dinámicos</h1>
+        <p class="subtitle">Interfaz moderna con efectos neon</p>
+
+        <!-- BOTONES -->
+        <div class="tab-buttons" role="tablist">
+            <button class="tab-btn active" data-tab="tab1" aria-selected="true">🏠 Inicio</button>
+            <button class="tab-btn" data-tab="tab2">💼 Servicios</button>
+            <button class="tab-btn" data-tab="tab3">📈 Stats</button>
+            <button class="tab-btn" data-tab="tab4">📩 Contacto</button>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="tab-content active" id="tab1">
+            <h2>Bienvenido</h2>
+            <p>Sistema de pestañas con diseño glassmorphism y animaciones suaves.</p>
+
+            <div class="cards">
+                <div class="card">⚡ Ultra rápido</div>
+                <div class="card">🎨 Diseño moderno</div>
+                <div class="card">⌨️ Control por teclado</div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab2">
+            <h2>Servicios</h2>
+            <ul class="list">
+                <li>✔ Desarrollo Web</li>
+                <li>✔ Diseño UI/UX</li>
+                <li>✔ SEO & Performance</li>
+                <li>✔ Apps Modernas</li>
+            </ul>
+            <button class="btn-main">Solicitar ahora</button>
+        </div>
+
+        <div class="tab-content" id="tab3">
+            <h2>Estadísticas</h2>
+            <div class="stats">
+                <div class="stat"><span>1200+</span> Usuarios</div>
+                <div class="stat"><span>99%</span> Satisfacción</div>
+                <div class="stat"><span>24/7</span> Online</div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="tab4">
+            <h2>Contacto</h2>
+            <form class="form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensaje"></textarea>
+                <button class="btn-main">Enviar</button>
+            </form>
+        </div>
+
+        <p class="hint">⬅ ➡ Usa las flechas para cambiar de tab</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

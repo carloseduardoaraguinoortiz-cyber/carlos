@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    background: radial-gradient(circle at top, #1e1e2f, #0f0f17);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+.card {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+    animation: fadeUp .6s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: .3rem;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: .9rem;
+    color: #bdbdfd;
+    margin-bottom: 1.5rem;
+}
+
+.input-section {
+    display: flex;
+    gap: .5rem;
+}
+
+input {
+    flex: 1;
+    padding: .9rem 1rem;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+button {
+    border: none;
+    border-radius: 999px;
+    padding: .9rem 1.3rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6a5cff, #00f2fe);
+    color: #000;
+    transition: transform .2s, box-shadow .2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,242,254,.4);
+}
+
+.stats {
+    margin: 1rem 0;
+    text-align: center;
+    color: #9aa4ff;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+li {
+    background: rgba(255,255,255,.12);
+    padding: .8rem 1rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+    animation: slide .3s ease;
+}
+
+@keyframes slide {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+li span {
+    flex: 1;
+}
+
+.item-buttons {
+    display: flex;
+    gap: .3rem;
+}
+
+.item-buttons button {
+    padding: .4rem .7rem;
+    font-size: .9rem;
+    background: #ff6b6b;
+    color: white;
+}
+
+.item-buttons button.edit {
+    background: #ffd93d;
+    color: #000;
+}
+
+.clear {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b6b, #ff9f43);
+    margin-top: .5rem;
+}
+
+/* Toast */
+#toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00f2fe;
+    color: #000;
+    padding: .8rem 1.4rem;
+    border-radius: 999px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s, transform .3s;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+}

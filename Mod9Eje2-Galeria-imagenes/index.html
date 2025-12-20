@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Modernizada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="gallery-container">
+        <header class="gallery-header">
+            <h1>✨ SnapGallery</h1>
+            <p>Descubre, filtra y disfruta de imágenes modernas con estilo</p>
+        </header>
+
+
+        <div class="gallery-controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar imágenes..." />
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="autos">Autos</button>
+                <button class="filter-btn" data-filter="naturaleza">Naturaleza</button>
+                <button class="filter-btn" data-filter="ciudad">Ciudad</button>
+                <button class="filter-btn" data-filter="tecnologia">Tecnología</button>
+                <button class="filter-btn" data-filter="personas">Personas</button>
+            </div>
+
+            <div class="view-toggle">
+                <button class="view-btn active" data-view="grid">Grid</button>
+                <button class="view-btn" data-view="list">Lista</button>
+            </div>
+        </div>
+
+        <div class="gallery-stats">
+            <span>Mostrando <strong id="imageCount">0</strong> imágenes</span>
+        </div>
+
+        <div class="gallery" id="gallery"></div>
+
+        <!-- LIGHTBOX MODERNO -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-overlay"></div>
+            <div class="lightbox-content">
+                <button class="lightbox-close">&times;</button>
+                <img src="" alt="" id="lightboxImg">
+                <div class="lightbox-info">
+                    <h3 id="lightboxTitle"></h3>
+                    <p id="lightboxCategory"></p>
+                </div>
+                <button class="lightbox-prev">‹</button>
+                <button class="lightbox-next">›</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

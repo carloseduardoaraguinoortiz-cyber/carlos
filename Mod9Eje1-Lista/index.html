@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Moderna</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page">
+    <section class="card">
+        <h1>📋 Lista Inteligente</h1>
+        <p class="subtitle">Gestiona tus tareas con estilo</p>
+
+        <div class="input-section">
+            <input type="text" id="itemInput" placeholder="Agregar nuevo item...">
+            <button id="addBtn">＋</button>
+        </div>
+
+        <div class="stats">
+            Total: <strong id="itemCount">0</strong>
+        </div>
+
+        <ul id="itemList"></ul>
+
+        <button id="clearAllBtn" class="clear">Limpiar lista</button>
+    </section>
+</div>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

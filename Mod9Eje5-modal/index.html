@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Dialog con JavaScript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <h1>🪟 Modal Dialog con JavaScript</h1>
+        <p>Ejemplo profesional de ventanas emergentes dinámicas</p>
+    </header>
+
+    <section class="intro">
+        <h2>¿Qué es un Modal?</h2>
+        <p>
+            Un <strong>modal</strong> es una ventana emergente que aparece sobre el contenido principal
+            y requiere la interacción del usuario antes de continuar.
+        </p>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <span>🎯</span>
+            <h3>Fácil de Usar</h3>
+            <p>Interfaz intuitiva y sencilla para cualquier usuario.</p>
+        </div>
+
+        <div class="feature">
+            <span>⚡</span>
+            <h3>Rápido</h3>
+            <p>Carga instantánea sin necesidad de recargar la página.</p>
+        </div>
+
+        <div class="feature">
+            <span>🔒</span>
+            <h3>Seguro</h3>
+            <p>Previene el scroll del fondo mientras el modal está activo.</p>
+        </div>
+
+        <div class="feature">
+            <span>♿</span>
+            <h3>Accesible</h3>
+            <p>Se puede cerrar con teclado (ESC) y clic externo.</p>
+        </div>
+    </section>
+
+    <section class="buttons">
+        <button class="btn blue" data-modal="modalForm">📩 Formulario</button>
+        <button class="btn green" data-modal="modalConfirm">✅ Confirmación</button>
+        <button class="btn purple" data-modal="modalInfo">ℹ️ Información</button>
+        <button class="btn orange" data-modal="modalGallery">🖼️ Galería</button>
+    </section>
+
+</div>
+
+<!-- FORMULARIO -->
+<div class="modal" id="modalForm">
+    <div class="overlay"></div>
+    <div class="modal-box">
+        <span class="close" data-close>×</span>
+        <h2>Formulario de Contacto</h2>
+        <form id="form">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Mensaje"></textarea>
+            <button class="btn blue">Enviar</button>
+        </form>
+    </div>
+</div>
+
+<!-- CONFIRMACION -->
+<div class="modal" id="modalConfirm">
+    <div class="overlay"></div>
+    <div class="modal-box small">
+        <span class="close" data-close>×</span>
+        <h2>¿Confirmar acción?</h2>
+        <p>Esta acción no se puede deshacer.</p>
+        <div class="actions">
+            <button class="btn gray" data-close>Cancelar</button>
+            <button class="btn green" id="confirmBtn">Confirmar</button>
+        </div>
+    </div>
+</div>
+
+<!-- INFORMACION -->
+<div class="modal" id="modalInfo">
+    <div class="overlay"></div>
+    <div class="modal-box">
+        <span class="close" data-close>×</span>
+        <h2>Información del Sistema</h2>
+        <ul>
+            <li>✔ Animaciones modernas</li>
+            <li>✔ Cierre independiente</li>
+            <li>✔ Accesibilidad con teclado</li>
+            <li>✔ Diseño profesional</li>
+        </ul>
+    </div>
+</div>
+
+<!-- GALERIA -->
+<div class="modal" id="modalGallery">
+    <div class="overlay"></div>
+    <div class="modal-box large">
+        <span class="close" data-close>×</span>
+        <h2>Galería Interactiva</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400" data-title="Paisaje Natural" data-desc="Imagen capturada en alta resolución.">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400" data-title="Montañas" data-desc="Escenario montañoso impresionante.">
+            <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400" data-title="Arquitectura" data-desc="Diseño urbano moderno.">
+        </div>
+    </div>
+</div>
+
+<!-- ANUNCIO IMAGEN -->
+<div class="modal" id="modalImage">
+    <div class="overlay"></div>
+    <div class="modal-box small">
+        <span class="close" data-close>×</span>
+        <h2 id="imgTitle"></h2>
+        <p id="imgDesc"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

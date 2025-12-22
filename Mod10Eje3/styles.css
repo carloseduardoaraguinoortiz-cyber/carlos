@@ -1,0 +1,157 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f7f8fc;
+    color: #333;
+    padding: 20px;
+}
+
+/* GRID PRINCIPAL */
+.container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* FILTROS MODERNOS */
+.filters {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 20px;
+    transition: all 0.3s ease;
+}
+
+.filters:hover {
+    transform: translateY(-5px);
+}
+
+.filters h2 { 
+    margin-bottom: 25px; 
+    font-size: 1.4rem; 
+    color: #ff6b81;
+    text-align: center;
+}
+
+.filter-group { margin-bottom: 25px; }
+
+.filter-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Inputs */
+input[type="text"], select, input[type="range"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus, select:focus, input[type="range"]:focus {
+    border-color: #ff6b81;
+    box-shadow: 0 0 8px rgba(255, 107, 129, 0.3);
+    outline: none;
+}
+
+/* Radio */
+.radio-options label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+/* BOTONES */
+.btn-page, .btn-secondary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-page { background: #ff6b81; color: white; }
+.btn-page:hover:not(:disabled) { background: #ff4757; }
+.btn-page:disabled { background: #ccc; cursor: not-allowed; }
+
+.btn-secondary { background: #f1f2f6; color: #333; width: 100%; }
+.btn-secondary:hover { background: #e0e0e0; }
+
+/* LABEL DE RANGO */
+#priceLabel {
+    font-weight: bold;
+    color: #ff6b81;
+}
+
+/* GRID DE PRODUCTOS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* TARJETAS CON EFECTOS MODERNOS */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    transition: transform 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.card h4 {
+    margin-bottom: 8px;
+    color: #ff6b81;
+}
+
+.card p {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+/* ANIMACIÓN APARICIÓN */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container { grid-template-columns: 1fr; }
+}
